@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import CartContextProvider from "@/components/CartContext";
 
 // Define the global styles with font-family and other styles
@@ -26,11 +26,13 @@ export default function App({ Component, pageProps }) {
   // Render the app with the global styles and font link tag
   return (
     <>
-      <GlobalStyles />
-      {fontLink}
-      <CartContextProvider>
-        <Component {...pageProps} />
-      </CartContextProvider>
+      <HelmetProvider>
+        <GlobalStyles />
+          {fontLink}
+        <CartContextProvider>
+          <Component {...pageProps} />
+        </CartContextProvider>
+      </HelmetProvider>
     </>
   );
 }
