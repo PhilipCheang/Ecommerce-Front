@@ -58,21 +58,20 @@ export default function ProductBox({_id, title, description, price, images}) {
     <ProducWrapper>
       <Box href={url}>
         <Card>
-          <CardImage src={images[0]} alt="" />
+          <CardImage src={images?.[0]} alt="" />
         </Card>
       </Box>
         <ProductInfoBox>
-          <CardTitle href="url">{title}</CardTitle>
+          <CardTitle href={url}>{title}</CardTitle>
           <PriceRow>
             <Price>
-            ${price}
+              ${price}
             </Price>
             <Button onClick={() => addProduct(_id)} primary>
               <CartIcon />
             </Button>
           </PriceRow>   
         </ProductInfoBox>
-      </ProducWrapper>
-    
-  )
+      </ProducWrapper>   
+  );
 }
