@@ -32,7 +32,9 @@ export const ButtonStyle = css`
   ${props => props.primary && css`
     background-color: #EF7C8E;
     border: 1px solid #EF7C8E;
-    font-size: 1.2rem;
+    font-size: .9rem;
+    @media screen and (min-width: 768px) {
+      font-size: 1.2rem;
   `}
   ${props => props.size === 'l' && css`
     font-size: 1.2rem;

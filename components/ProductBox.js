@@ -33,6 +33,9 @@ const CardTitle = styled(Link)`
   font-weight: bold;
   color: inherit;
   text-decoration: none;
+  @media screen and (min-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const ProductInfoBox = styled.div`
@@ -69,6 +72,7 @@ export default function ProductBox({_id, title, description, price, images}) {
             </Price>
             <Button onClick={() => addProduct(_id)} primary>
               <CartIcon />
+              Add to Cart
             </Button>
           </PriceRow>   
         </ProductInfoBox>
