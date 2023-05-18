@@ -162,12 +162,12 @@ export default function CartPage() {
                       </ProductInfoCell>
                       <td>
                         <Button
-                          onClick={() => lessOfThisProduct(product._id)}>-</Button>
+                          onClick={() => lessOfThisProduct(product._id)}>+</Button>
                         <QuantityLabel>
                           {cartProducts.filter(id => id === product._id).length}
                         </QuantityLabel>
                         <Button
-                          onClick={() => moreOfThisProduct(product._id)}>+</Button>
+                          onClick={() => moreOfThisProduct(product._id)}>-</Button>
                       </td>
                       <td>
                         ${cartProducts.filter(id => id === product._id).length * product.price}
