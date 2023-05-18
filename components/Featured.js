@@ -60,7 +60,7 @@ export default function Featured({product}) {
           </Column>
           <Column>
             <div>
-              <img src="https://philip-next-ecommerce.s3.amazonaws.com/1683848368080.png" alt="suit" />
+              <img src="https://philip-next-ecommerce.s3.us-east-2.amazonaws.com/1683754527693.jpg" alt="heroe" />
             </div> 
           </Column>         
         </ColumnsWrapper>
