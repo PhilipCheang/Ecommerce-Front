@@ -66,7 +66,7 @@ export default function Featured({product}) {
         <ColumnsWrapper>
           <Column>
             <div>
-              <Title>Professional {product.title} Dry Cleaning</Title>
+              <Title>Professional Blazer Dry Cleaning</Title>
               <ButtonWrapper>
                 <ButtonLink href={'/product/'+product._id} outline={1} white={1}>Read More</ButtonLink>
                 <Button primary onClick={addFeaturedToCart}>

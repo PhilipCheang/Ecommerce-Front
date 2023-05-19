@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
-const ProducWrapper = styled.div`
+const ProductWrapper = styled.div`
 `;
 
 const Box = styled.div`
@@ -61,7 +61,7 @@ export default function ProductBox({_id, title, description, price, images}) {
   const {addProduct} = useContext(CartContext);
   const url = '/product/'+_id;
   return (
-    <ProducWrapper>
+    <ProductWrapper>
       <Box href={url}>
         <Card>
           <CardImage src={images?.[0]} alt="" />
@@ -79,6 +79,6 @@ export default function ProductBox({_id, title, description, price, images}) {
             </Button>
           </PriceRow>   
         </ProductInfoBox>
-      </ProducWrapper>   
+      </ProductWrapper>   
   );
 }

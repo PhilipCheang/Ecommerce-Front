@@ -67,16 +67,17 @@ const CityHolder = styled.div`
 `;
 
 export default function CartPage() {
-  const {cartProducts,addProduct,removeProduct,clearCart} = useContext(CartContext);
+  const {cartProducts, addProduct, removeProduct, clearCart} = useContext(CartContext);
   const [products,setProducts] = useState([]);
   const [name,setName] = useState('');
-  const [phoneNumber, setPhoneNumber] =useState('');
+  const [phoneNumber,setPhoneNumber] = useState('');
   const [email,setEmail] = useState('');
   const [city,setCity] = useState('');
   const [postalCode,setPostalCode] = useState('');
   const [streetAddress,setStreetAddress] = useState('');
   const [country,setCountry] = useState('');
   const [isSuccess,setIsSuccess] = useState(false);
+
   useEffect(() => {
     if (cartProducts.length > 0) {
       axios.post('/api/cart', {ids:cartProducts})
@@ -94,6 +95,7 @@ export default function CartPage() {
     if (window?.location.href.includes('success')) {
       setIsSuccess(true);
       clearCart();
+      
     }
   }, []);
   function moreOfThisProduct(id) {
@@ -104,7 +106,7 @@ export default function CartPage() {
   }
   async function goToPayment() {
     const response = await axios.post('/api/checkout', {
-      name,phoneNumber,email,city,postalCode,streetAddress,country,
+      name,email,city,postalCode,streetAddress,country,
       cartProducts,
     });
     if (response.data.url) {
@@ -125,7 +127,7 @@ export default function CartPage() {
           <ColumnsWrapper>
             <Box>
               <h1>Thanks for your order!</h1>
-              <p>We will email instructions on your pickup and delivery date</p>
+              <p>We will email you when your order will be sent.</p>
             </Box>
           </ColumnsWrapper>
         </Center>
@@ -162,12 +164,12 @@ export default function CartPage() {
                       </ProductInfoCell>
                       <td>
                         <Button
-                          onClick={() => lessOfThisProduct(product._id)}>+</Button>
+                          onClick={() => lessOfThisProduct(product._id)}>-</Button>
                         <QuantityLabel>
                           {cartProducts.filter(id => id === product._id).length}
                         </QuantityLabel>
                         <Button
-                          onClick={() => moreOfThisProduct(product._id)}>-</Button>
+                          onClick={() => moreOfThisProduct(product._id)}>+</Button>
                       </td>
                       <td>
                         ${cartProducts.filter(id => id === product._id).length * product.price}
