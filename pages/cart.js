@@ -193,7 +193,7 @@ export default function CartPage() {
                      value={name}
                      name="name"
                      onChange={ev => setName(ev.target.value)} />
-              <Input type="text"
+              <Input type="tel"
                      placeholder="Phone Number"
                      value={phoneNumber}
                      name="phoneNumber"
