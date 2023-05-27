@@ -106,7 +106,7 @@ export default function CartPage() {
   }
   async function goToPayment() {
     const response = await axios.post('/api/checkout', {
-      name,email,city,postalCode,streetAddress,country,
+      name,phoneNumber,email,city,postalCode,streetAddress,country,
       cartProducts,
     });
     if (response.data.url) {
@@ -158,7 +158,7 @@ export default function CartPage() {
                     <tr key={product._id}>
                       <ProductInfoCell>
                         <ProductImageBox>
-                          <img src={product.images[0]} alt=""/>
+                          <img src={product.images[0]} alt="" />
                         </ProductImageBox>
                         {product.title}
                       </ProductInfoCell>

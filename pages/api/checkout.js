@@ -24,14 +24,14 @@ export default async function handler(req, res) {
     let line_items = [];
     for (const productId of uniqueIds) {
       const productInfo = productsInfos.find(p => p._id.toString() === productId);
-      const quantity = productsIds.filter(id => id === productId).length;
+      const quantity = productsIds.filter(id => id === productId)?.length || 0;
       if (quantity > 0 && productInfo) {
         line_items.push({
           quantity,
           price_data: {
             currency: 'USD',
             product_data: { name: productInfo.title },
-            unit_amount: quantity * productInfo.price * 100,
+            unit_amount: Math.round(productInfo.price * 100),
           },
         });
       }
