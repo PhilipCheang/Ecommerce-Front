@@ -7,6 +7,7 @@ import {CartContext} from "@/components/CartContext";
 import axios from "axios";
 import Table from "@/components/Table";
 import Input from "@/components/Input";
+import Image from "next/image";
 
 const ColumnsWrapper = styled.div`
   display: grid;
@@ -97,7 +98,7 @@ export default function CartPage() {
       clearCart();
       
     }
-  }, []);
+  }, [clearCart]);
   function moreOfThisProduct(id) {
     addProduct(id);
   }
@@ -158,7 +159,7 @@ export default function CartPage() {
                     <tr key={product._id}>
                       <ProductInfoCell>
                         <ProductImageBox>
-                          <img src={product.images[0]} alt="" />
+                          <Image src={product.images[0]} alt="" width={100} height={100} />
                         </ProductImageBox>
                         {product.title}
                       </ProductInfoCell>

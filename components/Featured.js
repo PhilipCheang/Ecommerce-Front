@@ -5,6 +5,7 @@ import ButtonLink from "./ButtonLink";
 import CartIcon from "./icons/CartIcon";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
+import Image from "next/image";
 
 export const Bg = styled.div`
   background-color: #FAE8E0;
@@ -78,7 +79,7 @@ export default function Featured({product}) {
           </Column>
           <Column>
             <div>
-              <img src="https://philip-next-ecommerce.s3.us-east-2.amazonaws.com/1683754527693.jpg" alt="heroe" />
+              <Image src="https://philip-next-ecommerce.s3.us-east-2.amazonaws.com/1683754527693.jpg" alt="heroe" width={700} height={500} priority={true} />
             </div> 
           </Column>         
         </ColumnsWrapper>
