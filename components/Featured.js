@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Center from "./Center";
 import Button from "./Button";
 import ButtonLink from "./ButtonLink";
-import CartIcon from "./icons/CartIcon";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import Image from "next/image";
@@ -71,7 +70,7 @@ export default function Featured({product}) {
               <ButtonWrapper>
                 <ButtonLink href={'/product/'+product._id} outline={1} white={1}>Read More</ButtonLink>
                 <Button primary onClick={addFeaturedToCart}>
-                  <CartIcon />
+               
                   Add to Cart
                 </Button>
               </ButtonWrapper>

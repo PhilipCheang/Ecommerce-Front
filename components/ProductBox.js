@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import Button from "./Button";
-import CartIcon from "./icons/CartIcon";
 import Link from "next/link";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
@@ -74,7 +73,7 @@ export default function ProductBox({_id, title, description, price, images}) {
               ${price}
             </Price>
             <Button onClick={() => addProduct(_id)} primary>
-              <CartIcon />
+              {/* <CartIcon /> */}
               Add to Cart
             </Button>
           </PriceRow>   
