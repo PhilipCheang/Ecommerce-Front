@@ -5,6 +5,7 @@ import ButtonLink from "./ButtonLink";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import Image from "next/image";
+import { CartPlus } from "@styled-icons/fa-solid";
 
 export const Bg = styled.div`
   background-color: #FAE8E0;
@@ -70,7 +71,7 @@ export default function Featured({product}) {
               <ButtonWrapper>
                 <ButtonLink href={'/product/'+product._id} outline={1} white={1}>Read More</ButtonLink>
                 <Button primary onClick={addFeaturedToCart}>
-               
+                  <CartPlus />
                   Add to Cart
                 </Button>
               </ButtonWrapper>

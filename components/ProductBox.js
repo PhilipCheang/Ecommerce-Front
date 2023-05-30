@@ -3,6 +3,7 @@ import Button from "./Button";
 import Link from "next/link";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
+import { CartPlus } from "@styled-icons/fa-solid";
 
 const ProductWrapper = styled.div`
 `;
@@ -73,7 +74,7 @@ export default function ProductBox({_id, title, description, price, images}) {
               ${price}
             </Price>
             <Button onClick={() => addProduct(_id)} primary>
-              {/* <CartIcon /> */}
+              <CartPlus />
               Add to Cart
             </Button>
           </PriceRow>   

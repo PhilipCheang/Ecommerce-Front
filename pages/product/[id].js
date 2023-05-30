@@ -7,9 +7,9 @@ import styled from "styled-components";
 import WhiteBox from "@/components/WhiteBox";
 import ProductImages from "@/components/ProductImages";
 import Button from "@/components/Button";
-import CartIcon from "@/components/icons/CartIcon";
 import {useContext} from "react";
 import {CartContext} from "@/components/CartContext";
+import { CartPlus } from "@styled-icons/fa-solid";
 
 const ColWrapper = styled.div`
   display: grid;
@@ -48,7 +48,7 @@ export default function ProductPage({product}) {
               </div>
               <div>
                 <Button primary onClick={() => addProduct(product._id)}>
-                  <CartIcon />Add to Cart
+                  <CartPlus />Add to Cart
                 </Button>
               </div>
             </PriceRow>
