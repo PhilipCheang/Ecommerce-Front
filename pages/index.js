@@ -1,4 +1,3 @@
-import Delivery from "@/components/Delivery";
 import Featured from "@/components/Featured";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -11,7 +10,6 @@ export default function HomePage({featuredProduct, newProducts}) {
     <div>
       <Header />
       <Featured product={featuredProduct} />
-      <Delivery />
       <NewProducts products={newProducts} />
       <Footer />
     </div>
